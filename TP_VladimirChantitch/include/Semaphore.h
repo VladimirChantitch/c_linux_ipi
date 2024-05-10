@@ -4,11 +4,17 @@
 class Semaphore {
 public:
     Semaphore(int key);
+    Semaphore();
     ~Semaphore();
 
     void P();
     void V();
     int getSemID() const;
+    int getSemKey();
+
+
+
+    void print();
 
 private:
     int sem_id;
@@ -18,6 +24,7 @@ private:
         unsigned short *array;
         struct seminfo *__buf;
     } sem_union;
+    int sem_key;
 };
 
 #endif
